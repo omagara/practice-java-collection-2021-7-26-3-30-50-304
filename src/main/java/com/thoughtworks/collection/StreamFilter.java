@@ -23,7 +23,11 @@ public class StreamFilter {
     }
 
     public List<Integer> getCommonElements(List<Integer> numbers, List<Integer> anotherNumbers) {
-        throw new NotImplementedException();
+        return numbers
+                .stream()
+                .distinct()
+                .filter(anotherNumbers::contains)
+                .collect(Collectors.toList());
     }
 
 
